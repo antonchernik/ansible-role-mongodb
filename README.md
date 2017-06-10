@@ -1,4 +1,4 @@
-Postfix
+Mongodb
 =========
 
 Ansible role for installing mongodb. Tested platforms are:
@@ -14,9 +14,11 @@ Role Variables
 
 Available variables are listed below, along with default values (see defaults/main.yml):
 
-debian_codename: jessie
+| Parameter | Required | Default | Choices | Comments |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| debian_codename | yes | jessie | | Sets latest debian codename |
 
-Latest debian codename
+
 
 Dependencies
 ------------
