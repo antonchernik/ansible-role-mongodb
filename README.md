@@ -16,7 +16,16 @@ Ubuntu 16 (xenial)
 Role Variables
 --------------
 
-None
+Available variables are listed below, along with default values (see defaults/main.yml):
+
+| Parameter | Required | Default | Choices | Comments |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| default_mongodb_admin_db | yes | admin | | Create MongoDB administrator db |
+| default_mongodb_root_login | yes | root | | Sets MongoDB user root login |
+| default_mongodb_root_password | yes | access | | Sets MongoDB user root password |
+| default_mongodb_user_login | yes | user | | Sets default MongoDB user name |
+| default_mongodb_user_password | yes | access | | Sets default MongoDB user password |
+| default_mongodb_port | yes | 27017 | | Sets MongoDB server port |
 
 
 Dependencies

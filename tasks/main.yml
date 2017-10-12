@@ -22,3 +22,35 @@
 
 - name: MongoDB ROLE | Ensure mongod is restarted
   action: service name=mongod state=restarted
+
+- mongodb_user:
+    database: {{ default_mongodb_admin_db }}
+    name: {{ default_mongodb_root_login }}
+    password: {{ default_mongodb_root_password }}
+    roles: root
+    state: present
+
+- mongodb_user:
+    database: {{ default_mongodb_admin_db }}
+    name: {{ default_mongodb_root_login }}
+    password: {{ default_mongodb_root_password }}
+    roles: root
+    state: present
+
+- mongodb_user:
+    database: {{ default_mongodb_admin_db }}
+    name: {{ default_mongodb_user_login }}
+    password: {{ default_mongodb_user_password }}
+    roles: clusterAdmin, readAnyDatabase
+    state: present
+
+- template:
+    src: ../templates/etc/mongod.conf.j2
+    dest: /etc/mongod.conf
+    owner: root
+    group: root
+    mode: 0644
+  become: true
+
+- name: MongoDB ROLE | Ensure mongod is restarted
+  action: service name=mongod state=restarted

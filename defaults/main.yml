@@ -1,1 +1,7 @@
 ---
+default_mongodb_admin_db: admin
+default_mongodb_root_login: root
+default_mongodb_root_password: access
+default_mongodb_user_login: user
+default_mongodb_user_password: access
+default_mongodb_port: 27017
