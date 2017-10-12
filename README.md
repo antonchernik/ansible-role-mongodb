@@ -3,21 +3,20 @@ Mongodb
 
 Ansible role for installing mongodb. Tested platforms are:
 * Debian 8
+* Debian 9
+* Ubuntu 16
 
 Requirements
 ------------
 
 Debian 8 (jessie)
+Debian 9 (stretch)
+Ubuntu 16 (xenial)
 
 Role Variables
 --------------
 
-Available variables are listed below, along with default values (see defaults/main.yml):
-
-| Parameter | Required | Default | Choices | Comments |
-| ------------- | ------------- | ------------- | ------------- | ------------- |
-| debian_codename | yes | jessie | | Sets latest debian codename |
-
+None
 
 
 Dependencies
