@@ -16,7 +16,7 @@
     update_cache: yes
 
 - name: MongoDB ROLE | Install MongoDB
-  apt: name={{ item }} force=yes
+  apt: name={{ item }} force=yes install_recommends=yes
   with_items:
    - mongodb-org
    - python-pip
@@ -33,8 +33,8 @@
   become: true
 
 
-- name: MongoDB ROLE | Ensure mongod is restarted
-  action: service name=mongod state=restarted
+- name: MongoDB ROLE | Ensure mongodb is restarted
+  action: service name=mongodb state=restarted
 
 - mongodb_user:
     database: "{{ default_mongodb_admin_db }}"
@@ -72,6 +72,12 @@
 - name: MongoDB ROLE | Ensure tph is restarted
   action: service name=disable-transparent-hugepages state=restarted
 
+- name: MongoDB ROLE | Enable mongod autostart
+  systemd:
+    name: mongod
+    state: started
+    enabled: true
+  when: ansible_distribution == "Ubuntu"
 
 - name: MongoDB ROLE | Ensure mongod is restarted
   action: service name=mongod state=restarted
