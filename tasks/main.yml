@@ -34,7 +34,7 @@
 
 
 - name: MongoDB ROLE | Ensure mongodb is restarted
-  action: service name=mongodb state=restarted
+  action: service name=mongod state=restarted
 
 - mongodb_user:
     database: "{{ default_mongodb_admin_db }}"
